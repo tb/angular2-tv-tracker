@@ -5,7 +5,7 @@ import {Observable} from 'rxjs/Observable';
 import {SortableHeader} from '../ui/sortableHeader';
 import {TVMaze} from '../../providers/providers';
 import {ToDate, OrderBy} from '../../pipes/pipes';
-import {Show,Episode} from '../../interfaces/interfaces';
+import {Show, Episode} from '../../interfaces/interfaces';
 
 @Component({
   selector: 'episodes',
