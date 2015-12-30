@@ -5,12 +5,12 @@ import {Observable} from 'rxjs/Observable';
 import {SortableHeader} from '../ui/sortableHeader';
 import {TVMaze} from '../../providers/providers';
 import {ToDate, OrderBy} from '../../pipes/pipes';
-import {Episode} from '../../interfaces/interfaces';
+import {Show,Episode} from '../../interfaces/interfaces';
 
 @Component({
   selector: 'episodes',
   template: `
-    <h1>View episodes</h1>
+    <h1>{{ (show | async)?.name }} episodes</h1>
     <table class="table">
       <thead>
         <tr>
@@ -39,11 +39,14 @@ import {Episode} from '../../interfaces/interfaces';
 })
 export class Episodes {
 
+  public show: Observable<Show>;
   public episodes: Observable<Episode[]>;
   public sort: {field: string, desc: boolean} = {field: null, desc: false};
 
   constructor(routeParams: RouteParams, tvMaze: TVMaze) {
-    this.episodes = tvMaze.getEpisodes(+routeParams.get('id'));
+    let id: number = +routeParams.get('id');
+    this.show = tvMaze.getShow(id);
+    this.episodes = tvMaze.getEpisodes(id);
   }
 
 }

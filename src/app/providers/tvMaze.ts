@@ -21,8 +21,16 @@ export class TVMaze {
       .map((shows: Array<{show: Show}>) => shows.map((show: {show: Show}) => show.show));
   }
 
+  getShow(id: number): Observable<any> {
+    return this.http
+        .get(`${TVMaze.BASE_URL}shows/${id}`)
+        .map((res: any) => res.json());
+  }
+
   getEpisodes(id: number): Observable<any> {
-    return this.http.get(`${TVMaze.BASE_URL}shows/${id}/episodes`).map((res: any) => res.json());
+    return this.http
+        .get(`${TVMaze.BASE_URL}shows/${id}/episodes`)
+        .map((res: any) => res.json());
   }
 
 }
