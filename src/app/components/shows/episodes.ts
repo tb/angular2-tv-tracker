@@ -17,7 +17,7 @@ import {Show, Episode} from '../../interfaces/interfaces';
           <th sortableHeader="name" [sort]="sort">Name</th>
           <th sortableHeader="season" [sort]="sort">Season</th>
           <th sortableHeader="number" [sort]="sort">Number</th>
-          <th>Air date</th>
+          <th sortableHeader="airstamp" [sort]="sort">Air date</th>
           <th>Runtime</th>
           <th>Summary</th>
         </tr>
