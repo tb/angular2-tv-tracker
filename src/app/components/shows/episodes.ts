@@ -2,10 +2,10 @@ import {Component} from 'angular2/core';
 import {RouteParams, OnActivate} from 'angular2/router';
 import {COMMON_DIRECTIVES} from 'angular2/common';
 import {Observable} from 'rxjs/Observable';
-import {SortableHeader} from './sortableHeader';
-import {TVMaze} from './../providers/providers';
-import {ToDate, OrderBy} from './../pipes/pipes';
-import {Episode} from '../interfaces/interfaces';
+import {SortableHeader} from '../ui/sortableHeader';
+import {TVMaze} from '../../providers/providers';
+import {ToDate, OrderBy} from '../../pipes/pipes';
+import {Episode} from '../../interfaces/interfaces';
 
 @Component({
   selector: 'episodes',

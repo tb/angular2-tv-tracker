@@ -1,9 +1,9 @@
 import {Component} from 'angular2/core';
 import {ROUTER_DIRECTIVES, RouteConfig, Route} from 'angular2/router';
-import {SearchShows} from './components/searchShows';
-import {Episodes} from './components/episodes';
-import {SubscribedShows} from './components/subscribedShows';
-import {Navbar} from './components/navbar';
+import {Episodes} from './shows/episodes';
+import {SearchShows} from './shows/searchShows';
+import {SubscribedShows} from './shows/subscribedShows';
+import {Navbar} from './navbar';
 
 @Component({
   selector: 'app',
@@ -25,4 +25,4 @@ import {Navbar} from './components/navbar';
   new Route({path: '/episodes/:id', component: Episodes, name: 'Episodes'}),
   new Route({path: '/', component: SubscribedShows, name: 'Subscribed'})
 ])
-export class AppComponent {}
+export class App {}

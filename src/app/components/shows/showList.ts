@@ -1,11 +1,11 @@
 import {Component, Input, Output, EventEmitter} from 'angular2/core';
 import {COMMON_DIRECTIVES} from 'angular2/common';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
-import {LocalStorage, TVMaze} from './../providers/providers';
-import {ToDate, OrderBy} from './../pipes/pipes';
-import {SortableHeader} from './sortableHeader';
+import {LocalStorage, TVMaze} from '../../providers/providers';
+import {ToDate, OrderBy} from '../../pipes/pipes';
+import {SortableHeader} from '../ui/sortableHeader';
 import {Observable} from 'rxjs/Observable';
-import {Show, Episode} from './../interfaces/interfaces';
+import {Show, Episode} from '../../interfaces/interfaces';
 
 @Component({
   selector: 'show-list',
