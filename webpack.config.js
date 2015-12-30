@@ -4,9 +4,11 @@ const IS_PROD = process.argv.indexOf('-p') > -1;
 
 module.exports = {
   devtool: IS_PROD ? 'source-map' : 'eval',
-  entry: './src/entry.ts',
+  entry: {
+    app: './src/index.ts'
+  },
   output: {
-    filename: 'tv-tracker.js'
+    filename: 'app.js'
   },
   module: {
     preLoaders: [{
@@ -23,14 +25,22 @@ module.exports = {
     extensions: ['', '.ts', '.js']
   },
   devServer: {
-    port: 8000,
+    port: 3000,
     inline: true,
     hot: true,
     historyApiFallback: true,
-    contentBase: 'src/public'
+    contentBase: 'src',
+    stats: {
+      assets: true,
+      colors: true,
+      version: false,
+      hash: false,
+      timings: true,
+      chunks: false,
+      chunkModules: false
+    }
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.optimize.DedupePlugin()
+    new webpack.HotModuleReplacementPlugin()
   ]
 };
