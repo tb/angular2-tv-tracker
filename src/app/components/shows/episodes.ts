@@ -14,7 +14,10 @@ import {Show, Episode} from '../../interfaces/interfaces';
     <table class="table">
       <thead>
         <tr>
-          <th sortableHeader="name" [sort]="sort">Name</th>
+          <th>
+            <div sortableHeader="name" [sort]="sort">Name</div>
+            <input class="col-md-6" (keyup)="filterBy('name',$event)">
+          </th>
           <th sortableHeader="season" [sort]="sort">Season</th>
           <th sortableHeader="number" [sort]="sort">Number</th>
           <th sortableHeader="airstamp" [sort]="sort">Air date</th>
@@ -42,6 +45,7 @@ export class Episodes {
   public show: Observable<Show>;
   public episodes: Observable<Episode[]>;
   public sort: {field: string, desc: boolean} = {field: null, desc: false};
+  public filter: Object = {};
 
   constructor(routeParams: RouteParams, tvMaze: TVMaze) {
     let id: number = +routeParams.get('id');
@@ -49,4 +53,13 @@ export class Episodes {
     this.episodes = tvMaze.getEpisodes(id);
   }
 
+  filterBy(field: string, event: any) {
+    let value = event.target.value;
+
+    if (!value) {
+      console.log('clear filter', field);
+    } else {
+      console.log('filterBy', field, value);
+    }
+  }
 }

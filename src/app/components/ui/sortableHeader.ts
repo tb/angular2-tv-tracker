@@ -2,7 +2,7 @@ import {Component, Input, Output} from 'angular2/core';
 import {COMMON_DIRECTIVES} from 'angular2/common';
 
 @Component({
-  selector: 'th[sortableHeader]',
+  selector: '[sortableHeader]',
   directives: [COMMON_DIRECTIVES],
   template: `
     <div (click)="headerClicked()">
