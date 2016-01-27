@@ -9,7 +9,7 @@ import {Observable} from 'rxjs/Observable';
   pipes: [ToDate, OrderBy],
   template: `
     <h1>Users</h1>
-    <table class='table' [hidden]='!users || users.length === 0'>
+    <table class="table" [hidden]="!users || users.length === 0">
       <thead>
         <tr>
           <th sortableHeader="first_name" [sort]="sort">First Name</th>
