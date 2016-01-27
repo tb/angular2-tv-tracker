@@ -9,7 +9,7 @@ import {Observable} from 'rxjs/Observable';
   pipes: [ToDate, OrderBy],
   template: `
     <h1>Users</h1>
-    <table class="table" [hidden]="!users || users.length === 0">
+    <table class='table' [hidden]='!users || users.length === 0'>
       <thead>
         <tr>
           <th sortableHeader="first_name" [sort]="sort">First Name</th>
@@ -33,16 +33,16 @@ export class UsersIndex {
   constructor() {
     this.users = [
       {
-        "first_name": "Mark",
-        "last_name": "Hicks"
+        first_name: 'Mark',
+        last_name: 'Hicks'
       },
       {
-        "first_name": "Russell",
-        "last_name": "Arnold"
+        first_name: 'Russell',
+        last_name: 'Arnold'
       },
       {
-        "first_name": "Robert",
-        "last_name": "Carpenter"
+        first_name: 'Robert',
+        last_name: 'Carpenter'
       },
     ];
     this.sort = {field: 'last_name', desc: false};
