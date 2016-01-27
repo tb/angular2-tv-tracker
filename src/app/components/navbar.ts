@@ -9,6 +9,9 @@ import {ROUTER_DIRECTIVES, Router, Location} from 'angular2/router';
       <div class="container">
         <h1 class="navbar-brand">Angular 2 TV tracker</h1>
         <ul class="nav navbar-nav">
+          <li class="nav-item" [class.active]="location.path() === '/users'">
+            <a class="nav-link"  [routerLink]="['/Users']">Users</a>
+          </li>
           <li class="nav-item" [class.active]="location.path() === ''">
             <a class="nav-link"  [routerLink]="['/Subscribed']">Subscribed shows</a>
           </li>

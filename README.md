@@ -26,5 +26,6 @@ npm start
 open http://localhost:8000
 ```
 
-### Roadmap
-* Tests
+### Other setups
+
+https://github.com/valor-software/angular2-bootstrap-starter

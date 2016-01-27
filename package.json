@@ -1,11 +1,7 @@
 {
-  "name": "angular2-tv-tracker",
-  "private": true,
-  "description": "Angular 2 TV tracker",
-  "repository": "git@github.com:mattlewis92/angular2-tv-tracker.git",
-  "license": "MIT",
+  "name": "p2",
   "dependencies": {
-    "angular2": "~2.0.0-beta.0",
+    "angular2": "~2.0.0-beta.1",
     "bootstrap": "~4.0.0-alpha.2",
     "es6-shim": "~0.33.13",
     "es7-shim": "~5.0.0",
@@ -27,7 +23,7 @@
     "webpack-dev-server": "~1.14.0"
   },
   "scripts": {
-    "start": "webpack-dev-server --progress",
+    "start": "webpack-dev-server --progress --watch",
     "build": "webpack -p"
   }
 }
